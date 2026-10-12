@@ -243,15 +243,15 @@ p{margin:0 0 1em}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.nav{transition:none}}
 
 /* ---------- journey (scroll-driven map) ---------- */
-.jy{position:relative;height:760vh;background:#F3EFE4}
+.jy{position:relative;height:1000vh;background:#F3EFE4}
 .jy-sticky{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden}
 .jy-stage{position:absolute;inset:0;background:#F3EFE4}
 .jy-stage svg{width:100%;height:100%;display:block}
 .jy-stage noscript img{width:100%;height:100%;object-fit:cover}
 .jy-copylayer{position:absolute;inset:0;pointer-events:none}
 .jy-copylayer::before{content:"";position:absolute;inset:0;width:min(56vw,760px);background:linear-gradient(90deg,#F3EFE4 0%,rgba(243,239,228,.92) 50%,rgba(243,239,228,0) 100%)}
-.jy-copy{position:absolute;left:clamp(16px,5vw,64px);top:50%;transform:translateY(calc(-50% + 12px));width:min(44vw,520px);opacity:0;visibility:hidden;transition:opacity .45s,transform .45s,visibility 0s .45s;pointer-events:none}
-.jy-copy.is-on{opacity:1;visibility:visible;transition:opacity .45s,transform .45s,visibility 0s;transform:translateY(-50%);pointer-events:auto}
+.jy-copy{position:absolute;left:clamp(16px,5vw,64px);top:50%;transform:translateY(calc(-50% + 12px));width:min(44vw,520px);opacity:0;visibility:hidden;transition:opacity .45s,visibility 0s .45s;pointer-events:none}
+.jy-copy.is-on{opacity:1;visibility:visible;transition:opacity .45s,visibility 0s;transform:translateY(calc(-50% + 10px - 20px * var(--jy-stop, .5)));pointer-events:auto}
 .jy-copy__num{font-family:var(--f-display);font-weight:700;font-size:.95rem;letter-spacing:.06em;color:var(--muted)}
 .jy-copy__num b{color:var(--anthracite-2)}
 .jy-copy .h1{font-size:clamp(2.3rem,4.8vw,3.9rem);margin-top:10px}
@@ -275,7 +275,7 @@ p{margin:0 0 1em}
 @keyframes jy-wheel{0%{opacity:0;top:6px}40%{opacity:1}100%{opacity:0;top:17px}}
 .jy-attrib{position:absolute;left:12px;bottom:10px;font-size:.68rem;color:var(--muted);background:rgba(243,239,228,.85);padding:2px 6px;border-radius:4px}
 .jy-attrib a{color:inherit}
-@media (max-width:860px){.jy{height:680vh}.jy-copylayer{inset:auto;left:0;right:0;bottom:var(--jy-footer,0px);max-height:46%;background:#F3EFE4;border-radius:18px 18px 0 0;box-shadow:0 -8px 24px rgba(43,45,49,.08);padding:20px 16px calc(14px + env(safe-area-inset-bottom));overflow:auto;pointer-events:auto}.jy-copylayer::before{content:"";position:absolute;inset:auto;top:8px;left:50%;width:40px;height:4px;border-radius:2px;background:#C9CBD0;transform:translateX(-50%)}.jy-copy{position:relative;inset:auto;width:auto;transform:none;transition:none;display:none}.jy-copy.is-on{display:block;transform:none;transition:none}.jy-copy .h1{font-size:clamp(1.7rem,7.2vw,2.3rem)}.jy-copy .h2{font-size:clamp(1.5rem,6.4vw,2.1rem)}.jy-copy__body{font-size:.98rem;max-width:none}.jy-route{top:84px;right:auto;left:16px;transform:none;flex-direction:row;gap:10px;padding:6px 6px;background:rgba(243,239,228,.85);border-radius:999px}.jy-route::before{display:none}.jy-route__label{display:none}.jy-hint{display:none}.jy-attrib{bottom:auto;top:132px}}
+@media (max-width:860px){.jy{height:880vh}.jy-copylayer{inset:auto;left:0;right:0;bottom:var(--jy-footer,0px);max-height:46%;background:#F3EFE4;border-radius:18px 18px 0 0;box-shadow:0 -8px 24px rgba(43,45,49,.08);padding:20px 16px calc(14px + env(safe-area-inset-bottom));overflow:auto;pointer-events:auto}.jy-copylayer::before{content:"";position:absolute;inset:auto;top:8px;left:50%;width:40px;height:4px;border-radius:2px;background:#C9CBD0;transform:translateX(-50%)}.jy-copy{position:relative;inset:auto;width:auto;transform:none;transition:none;display:none}.jy-copy.is-on{display:block;transform:none;transition:none}.jy-copy .h1{font-size:clamp(1.7rem,7.2vw,2.3rem)}.jy-copy .h2{font-size:clamp(1.5rem,6.4vw,2.1rem)}.jy-copy__body{font-size:.98rem;max-width:none}.jy-route{top:84px;right:auto;left:16px;transform:none;flex-direction:row;gap:10px;padding:6px 6px;background:rgba(243,239,228,.85);border-radius:999px}.jy-route::before{display:none}.jy-route__label{display:none}.jy-hint{display:none}.jy-attrib{bottom:auto;top:132px}}
 @media (prefers-reduced-motion:reduce){.jy-copy{transition:none}.jy-hint i::after{animation:none}}
 /* static fallback: no JS, or the map could not be fetched - map image (if any) on top, the six stops as plain text below */
 .jy--static{height:auto}
