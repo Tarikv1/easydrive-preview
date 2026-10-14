@@ -330,8 +330,3 @@ p{margin:0 0 1em}
 /* ---------- prices: two tables + worked example ---------- */
 #preise .h3{margin:18px 0 10px}
 .prices--fees td:last-child{font-weight:600}
-.calc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:18px 0}
-.calc__title{font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin:0 0 8px}
-.calc p{margin:0 0 10px}
-.calc p:last-child{margin-bottom:0}
-.calc b{font-family:var(--f-display);font-size:1.35rem;white-space:nowrap}
