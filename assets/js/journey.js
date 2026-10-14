@@ -159,6 +159,7 @@
       win.fetch(url).then(function (r) { return r.ok ? r.text() : Promise.reject(new Error("map " + r.status)); }).then(function (txt) {
         stage.innerHTML = txt;
         svg = stage.querySelector("svg");
+        var ml = stage.getAttribute("data-map-label"); if (ml && svg) svg.setAttribute("aria-label", ml);
         if (!svg) return;
         svg.removeAttribute("width"); svg.removeAttribute("height");
         svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
@@ -170,7 +171,11 @@
         routeG = svg.querySelector("#route"); routeBounds = routeG ? routeG.getBBox() : null;
         car = svg.querySelector("#car");
         stopEls = data.stops.map(function (s) { return svg.querySelector("#stop-" + s.id); });
-        stopEls.forEach(function (el, i) { if (!el) return; el.addEventListener("click", activate(i)); el.addEventListener("keydown", activate(i)); });
+        stopEls.forEach(function (el, i) {
+          if (!el) return;
+          if (ml && copies[i]) el.setAttribute("aria-label", (i + 1) + ": " + copies[i].getAttribute("data-label"));
+          el.addEventListener("click", activate(i)); el.addEventListener("keydown", activate(i));
+        });
         Array.prototype.forEach.call(svg.querySelectorAll("#landmarks [data-stop]"), function (el) {
           var i = -1; data.stops.forEach(function (s, k) { if (s.id === el.getAttribute("data-stop")) i = k; });
           if (i >= 0) el.addEventListener("click", activate(i));

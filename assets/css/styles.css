@@ -326,3 +326,12 @@ p{margin:0 0 1em}
 .road b{display:block;font-family:var(--f-display);text-transform:uppercase;font-size:1.3rem;color:var(--anthracite-2)}
 .road p{margin:4px 0 0;font-size:.95rem;color:var(--muted)}
 @media (max-width:860px){.state{grid-template-columns:1fr}.numbers{grid-template-columns:1fr}.numbers div{border-right:0;border-bottom:1px solid var(--line);padding-left:0}.road{grid-template-columns:1fr 1fr}.compare{display:block;overflow-x:auto}}
+
+/* ---------- prices: two tables + worked example ---------- */
+#preise .h3{margin:18px 0 10px}
+.prices--fees td:last-child{font-weight:600}
+.calc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:18px 0}
+.calc__title{font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin:0 0 8px}
+.calc p{margin:0 0 10px}
+.calc p:last-child{margin-bottom:0}
+.calc b{font-family:var(--f-display);font-size:1.35rem;white-space:nowrap}
