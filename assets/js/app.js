@@ -14,8 +14,18 @@
   };
   ED.waUrl = function (number, text) { return "https://wa.me/" + number + "?text=" + encodeURIComponent(text); };
   ED.mailtoUrl = function (email, subject, text) { return "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text); };
+  // The launch offer ends with its last day (local time); this is the same cut-off the build uses (promoContext in scripts/lib.mjs).
+  ED.promoExpired = function (untilIso, now) { return (now || new Date()) > new Date(untilIso + "T23:59:59"); };
 
   ED.init = function (doc, win) {
+    // A page built during the launch offer still shows the right variant once the date has passed.
+    var promoUntil = doc.body && doc.body.getAttribute("data-promo-until");
+    if (promoUntil && ED.promoExpired(promoUntil)) {
+      var launch = doc.querySelectorAll("[data-promo-launch]");
+      var done = doc.querySelectorAll("[data-promo-done]");
+      for (var i = 0; i < launch.length; i++) launch[i].hidden = true;
+      for (var j = 0; j < done.length; j++) done[j].hidden = false;
+    }
     var nav = doc.getElementById("nav");
     var toggle = doc.getElementById("navToggle");
     var links = doc.getElementById("navLinks");
