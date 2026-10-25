@@ -66,9 +66,7 @@ p{margin:0 0 1em}
 .nav.is-scrolled{box-shadow:0 8px 24px rgba(30,32,35,.08)}
 .nav__inner{display:flex;align-items:center;gap:20px;min-height:72px;position:relative}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
-.brand__mark{width:40px;height:40px}
-.brand__word{font-family:var(--f-display);font-weight:800;font-size:1.45rem;text-transform:uppercase;letter-spacing:.02em;line-height:1}
-.brand__word small{display:block;font-family:var(--f-body);font-size:.72rem;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--muted);margin-top:3px}
+.brand__logo{display:block;height:46px;width:auto}
 .nav__links{display:flex;gap:22px;margin-left:auto}
 .nav__links a{text-decoration:none;font-weight:600;color:var(--anthracite);padding:6px 0;border-bottom:2px solid transparent}
 .nav__links a:hover,.nav__links a[aria-current="page"]{border-color:var(--yellow)}
@@ -249,8 +247,8 @@ p{margin:0 0 1em}
 /* ---------- footer ---------- */
 .foot{background:var(--anthracite-2);color:#d5d7db;padding:56px 0 40px}
 .foot__inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
-.foot .brand__word{color:#fff}
-.foot .brand__word small{color:#a9acb3}
+.foot__logo{display:block;width:230px;height:auto;margin:0 0 12px}
+.foot__tagline{display:block;color:#a9acb3;font-size:.9rem;font-weight:600;margin:0 0 10px}
 .foot__brand p{margin:12px 0 0;max-width:34ch;font-size:.95rem}
 .foot__h{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.04em;font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:8px;display:block}
 .foot__col{display:flex;flex-direction:column;gap:8px}
@@ -289,7 +287,7 @@ p{margin:0 0 1em}
 @media (max-width:980px){.about,.contact,.classblock{grid-template-columns:1fr}.grid--3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(2,1fr)}.lang{grid-template-columns:1fr 1fr}.foot__inner{grid-template-columns:1fr 1fr}.keyfacts{position:static}}
 /* below 900 px the header (896 px wide in German) folds into the burger menu; the other phone rules start at 760 px */
 @media (max-width:1080px){.nav__links{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;flex-direction:column;gap:0;padding:10px 16px 16px;border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(30,32,35,.08)}.nav__links.is-open{display:flex}.nav__links a{padding:12px 0;border-bottom:1px solid var(--line)}.nav__toggle{display:block;margin-left:auto}.nav__actions .btn{display:none}.sticky{display:flex;gap:8px}.foot{padding-bottom:110px}}
-@media (max-width:760px){.hero__side{margin-top:18px}.grid--3,.grid--2,.offer,.fleet,.form__row{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.section{padding:52px 0}.foot__inner{grid-template-columns:1fr}.timeline li{grid-template-columns:1fr}.brand__word small{display:none}}
+@media (max-width:760px){.hero__side{margin-top:18px}.grid--3,.grid--2,.offer,.fleet,.form__row{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.section{padding:52px 0}.foot__inner{grid-template-columns:1fr}.timeline li{grid-template-columns:1fr}.brand__logo{height:38px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.nav{transition:none}}
 
 /* ---------- editorial blocks ---------- */
